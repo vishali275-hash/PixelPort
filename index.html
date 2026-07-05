@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PixelPort | Vishali</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+    color:white;
+    overflow-x:hidden;
+}
+
+#particles-bg{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-2;
+}
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(0,0,0,.35);
+    backdrop-filter:blur(12px);
+    z-index:1000;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 10%;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:bold;
+    color:#ff7eb3;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:25px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#ff7eb3;
+}
+
+#menu-toggle{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:120px 10% 60px;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.hero h1{
+    font-size:60px;
+    margin-bottom:15px;
+}
+
+.hero h1 span{
+    color:#ff7eb3;
+}
+
+#typing{
+    font-size:24px;
+    color:#ffc6e3;
+    min-height:35px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:18px;
+    line-height:1.8;
+    color:#e6e6e6;
+    margin-bottom:35px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 32px;
+    border-radius:40px;
+    background:linear-gradient(90deg,#ff7eb3,#7c3aed);
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    transition:.4s;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 20px rgba(255,126,179,.5);
+}
+
+section{
+    padding:100px 10%;
+}
+
+h2{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:40px;
+}
+
+.card{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.1);
+    backdrop-filter:blur(12px);
+    border-radius:18px;
+    padding:25px;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    background:rgba(255,126,179,.15);
+}
+
+@media(max-width:768px){
+
+nav ul{
+display:none;
+position:absolute;
+top:75px;
+right:8%;
+background:#241b42;
+padding:20px;
+border-radius:15px;
+flex-direction:column;
+gap:15px;
+}
+
+nav ul.show{
+display:flex;
+}
+
+#menu-toggle{
+display:block;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+#typing{
+font-size:20px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<canvas id="particles-bg"></canvas>
+
+<header>
+
+<nav>
+
+<div class="logo">PixelPort</div>
+
+<div id="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<ul id="menu">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+<button onclick="toggleMode()" style="padding:8px 15px;border:none;border-radius:20px;background:#ff7eb3;color:white;cursor:pointer;">
+🌙
+</button>
+
+</nav>
+
+</header>
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<h1>Hello, I'm <span>Vishali</span></h1>
+
+<h3 id="typing"></h3>
+
+<p>
+
+A passionate <b>Frontend Web Developer</b> and <b>B.Sc Artificial Intelligence</b> student with a strong interest in creating modern, responsive, and user-friendly websites. I enjoy transforming creative ideas into interactive digital experiences while continuously improving my skills in web development and programming.
+
+</p>
+
+<p>
+
+My goal is to become a professional Full-Stack Developer and contribute to innovative software solutions by combining creativity, problem-solving, and modern technologies.
+
+</p>
+
+<a href="#projects" class="btn">Explore My Projects</a>
+
+</div>
+
+</section>
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+<h2>About Me</h2>
+
+<div class="card">
+
+<h3>👋 Hello, I'm Vishali</h3>
+
+<p style="margin-top:20px; line-height:1.9;">
+
+I am a dedicated <strong>B.Sc Artificial Intelligence</strong> student with a passion for web development, programming, and emerging technologies. I enjoy designing responsive websites that provide an engaging and user-friendly experience.
+
+</p>
+
+<p style="margin-top:18px; line-height:1.9;">
+
+I constantly improve my technical skills by building projects, learning modern frameworks, and solving real-world programming challenges. My goal is to become a skilled Full Stack Developer and AI Engineer who creates impactful digital solutions.
+
+</p>
+
+<br>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;">
+
+<div class="card">💻 Web Developer</div>
+
+<div class="card">🎨 Creative Designer</div>
+
+<div class="card">⚡ Fast Learner</div>
+
+<div class="card">🧠 Problem Solver</div>
+
+<div class="card">🤝 Team Player</div>
+
+<div class="card">🚀 Continuous Learner</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= EDUCATION ================= -->
+
+<section id="education">
+
+<h2>Education</h2>
+
+<div class="card">
+
+<h3>🎓 Bachelor of Science in Artificial Intelligence (B.Sc AI)</h3>
+
+<h4 style="margin-top:10px;color:#ffc6e3;">
+Your College Name
+</h4>
+
+<p style="margin-top:15px;line-height:1.9;">
+
+Currently pursuing a Bachelor's degree in Artificial Intelligence with a strong foundation in programming, web technologies, machine learning, database management, and software development.
+
+</p>
+
+<br>
+
+<h3>📚 Core Subjects</h3>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;margin-top:20px;">
+
+<div class="card">🤖 Artificial Intelligence</div>
+
+<div class="card">🐍 Python Programming</div>
+
+<div class="card">🌐 Web Development</div>
+
+<div class="card">🗄 Database Management</div>
+
+<div class="card">📊 Data Science</div>
+
+<div class="card">🧠 Machine Learning</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills">
+
+<h2>Skills</h2>
+
+<p style="text-align:center;max-width:900px;margin:auto;line-height:1.9;margin-bottom:40px;">
+
+I enjoy learning modern technologies and continuously improving my development skills by building projects and exploring innovative ideas. My technical knowledge includes frontend development, programming, and AI fundamentals.
+
+</p>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:25px;text-align:center;">
+
+<div class="card">🌐 HTML5</div>
+
+<div class="card">🎨 CSS3</div>
+
+<div class="card">⚡ JavaScript</div>
+
+<div class="card">🐍 Python</div>
+
+<div class="card">💻 C Programming</div>
+
+<div class="card">🤖 AI Basics</div>
+
+<div class="card">🗄 SQL</div>
+
+<div class="card">📱 Responsive Design</div>
+
+</div>
+
+</section>
+
+<!-- ================= ACHIEVEMENTS ================= -->
+
+<section id="achievements">
+
+<h2>Highlights</h2>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;">
+
+<div class="card">
+
+<h3>🚀 Fast Learner</h3>
+
+<p>
+
+Quickly adapts to new technologies and enjoys learning modern web development concepts.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>💡 Creative Thinking</h3>
+
+<p>
+
+Passionate about designing attractive and user-friendly interfaces with smooth animations.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🎯 Goal Oriented</h3>
+
+<p>
+
+Focused on becoming a skilled Full Stack Developer and Artificial Intelligence Engineer.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+
+<h2>Projects</h2>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;">
+
+<div class="card">
+
+<h3>🌦 Weather App</h3>
+
+<p>
+
+A responsive weather application that displays real-time weather updates including temperature, humidity, wind speed, and weather conditions using an external weather API. Designed with a clean interface and mobile-friendly layout.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🎮 Tic Tac Toe Game</h3>
+
+<p>
+
+A Python-based Tic Tac Toe game featuring turn-based gameplay, automatic winner detection, and clean game logic. This project strengthened my programming and problem-solving skills.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>💼 PixelPort Portfolio</h3>
+
+<p>
+
+A modern personal portfolio website created using HTML, CSS, and JavaScript. It showcases my education, technical skills, projects, and contact information with responsive design, animations, and an attractive user interface.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>📝 To-Do List</h3>
+
+<p>
+
+A task management application that allows users to add, edit, complete, and delete daily tasks. Designed to improve productivity with a simple and responsive interface.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🧮 Calculator</h3>
+
+<p>
+
+A fully functional calculator built with HTML, CSS, and JavaScript that performs basic arithmetic operations while providing a clean and interactive user experience.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>📸 Image Gallery</h3>
+
+<p>
+
+A responsive image gallery with hover animations and organized layouts that demonstrates modern CSS styling and responsive web design techniques.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+<h2>Contact Me</h2>
+
+<p style="text-align:center;max-width:800px;margin:auto;line-height:1.8;margin-bottom:40px;">
+
+Thank you for visiting my portfolio. I'm always excited to connect with people, learn new things, and collaborate on interesting projects. If you have an opportunity, suggestion, or simply want to say hello, feel free to send me a message below.
+
+</p>
+
+<div class="card" style="max-width:700px;margin:auto;">
+
+<form>
+
+<input type="text" placeholder="Your Name" required
+style="width:100%;padding:15px;margin:12px 0;border:none;border-radius:10px;outline:none;">
+
+<input type="email" placeholder="Your Email" required
+style="width:100%;padding:15px;margin:12px 0;border:none;border-radius:10px;outline:none;">
+
+<textarea rows="6" placeholder="Write your message..."
+style="width:100%;padding:15px;margin:12px 0;border:none;border-radius:10px;outline:none;"></textarea>
+
+<button class="btn" type="submit">
+📩 Send Message
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer style="text-align:center;padding:35px;background:rgba(0,0,0,.35);margin-top:60px;">
+
+<h3 style="color:#ff7eb3;">PixelPort</h3>
+
+<p style="margin:15px 0;">
+Designed & Developed by <strong>Vishali</strong>
+</p>
+
+<p>
+© 2026 All Rights Reserved.
+</p>
+
+</footer>
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+// Mobile Menu
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("show");
+}
+
+// Typing Effect
+
+const words=[
+"Frontend Developer",
+"B.Sc AI Student",
+"Creative Web Designer",
+"Problem Solver",
+"Tech Enthusiast"
+];
+
+let i=0;
+let j=0;
+let current="";
+let isDeleting=false;
+
+function type(){
+
+current=words[i];
+
+if(!isDeleting){
+
+document.getElementById("typing").textContent=current.substring(0,j++);
+
+if(j>current.length){
+isDeleting=true;
+setTimeout(type,1000);
+return;
+}
+
+}else{
+
+document.getElementById("typing").textContent=current.substring(0,j--);
+
+if(j==0){
+isDeleting=false;
+i=(i+1)%words.length;
+}
+
+}
+
+setTimeout(type,isDeleting?60:120);
+
+}
+
+type();
+
+
+// Dark Mode
+
+function toggleMode(){
+
+document.body.classList.toggle("light-mode");
+
+}
+
+
+// Contact Form
+
+document.querySelector("form").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+alert("✅ Thank you! Your message has been received successfully.");
+
+this.reset();
+
+});
+
+
+// Floating Particles
+
+const canvas=document.getElementById("particles-bg");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+
+for(let i=0;i<80;i++){
+
+particles.push({
+
+x:Math.random()*canvas.width,
+
+y:Math.random()*canvas.height,
+
+r:Math.random()*3+1,
+
+dx:(Math.random()-0.5),
+
+dy:(Math.random()-0.5)
+
+});
+
+}
+
+function animate(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+particles.forEach(p=>{
+
+ctx.beginPath();
+
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+
+ctx.fillStyle="rgba(255,126,179,.7)";
+
+ctx.fill();
+
+p.x+=p.dx;
+
+p.y+=p.dy;
+
+if(p.x<0||p.x>canvas.width)p.dx*=-1;
+
+if(p.y<0||p.y>canvas.height)p.dy*=-1;
+
+});
+
+requestAnimationFrame(animate);
+
+}
+
+animate();
+
+window.onresize=function(){
+
+canvas.width=window.innerWidth;
+
+canvas.height=window.innerHeight;
+
+}
+
+</script>
+
+</body>
+</html>
